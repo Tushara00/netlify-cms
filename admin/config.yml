@@ -5,11 +5,14 @@ media_folder: "/images"
 # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images"
 collections:
- - name: "index"
-   label: "index page"
-   folder: "images"
-   create: true       
-   fields:
-      - { name: title, label: Title, widget: string }
-      - { name: content, label: Content, widget: text }
-      - { name: link, label: Link, widget: string }
+ - name: pages
+   label: pages
+   folder: "images"      
+   files:
+      - file: index.html
+        label: Index 
+        name: index
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: content, label: Content, widget: text }
+          - { name: link, label: Link, widget: string }
