@@ -8,11 +8,8 @@ collections:
  - name: "index"
    label: "index page"
    folder: "images"
-   create: true
-   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-   
-        
-fields:
+   create: true       
+   fields:
       - { name: title, label: Title, widget: string }
       - { name: content, label: Content, widget: text }
       - { name: link, label: Link, widget: string }
