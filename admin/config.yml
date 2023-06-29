@@ -3,7 +3,7 @@ backend:
   branch: main 
 media_folder: "/images"
 # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images"
+public_folder: "index.html"
 collections:
  - name: "index"
    label: index
