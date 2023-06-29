@@ -7,11 +7,34 @@
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-    <h1>this is title</h1>
-    <p>this is description</p>
-    <img src="University_of_Tennessee_at_Chattanooga_athletics_logo.png">
-    <a href="https://web.facebook.com/?_rdc=1&_rdr"></a>
+   <div id="data-container">
 
+   </div>
+   <script>
+// Fetch the JSON data
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    // Access the data properties
+    const title = data.title;
+    const description = data.description;
+    const contactEmail = data.contact.email;
+    const contactPhone = data.contact.phone;
+
+    // Update the DOM with the data
+    const dataContainer = document.getElementById('data-container');
+    dataContainer.innerHTML = `
+      <h1>${title}</h1>
+      <p>${description}</p>
+      <p>Contact Email: ${contactEmail}</p>
+      <p>Contact Phone: ${contactPhone}</p>
+    `;
+  })
+  .catch(error => {
+    // Handle error
+    console.error('Error:', error);
+  });
+</script>
     <script>
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
